@@ -21,6 +21,8 @@ namespace Exam1SodaMachine
             //proper/efficient. As the time got closer, I began to panic because I'm definitely slower at establishing what the flow
             //organization of my program should be, but I think I ultimately get closer to the desired end result before too too long.
 
+            //I hope this doesn't mean I'm not good enough to work in this field.
+
             Register coinPool = new Register();
             Inventory testInventory = new Inventory();
 
