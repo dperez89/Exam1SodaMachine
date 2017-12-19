@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Exam1SodaMachine
 {
-    class Penny
+    class Penny : Coin
     {
-        double value;
-
         public Penny()
         {
             value = .01;

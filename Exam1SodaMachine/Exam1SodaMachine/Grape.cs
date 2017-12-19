@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Exam1SodaMachine
 {
-    class Quarter : Coin
+    class Grape : Soda
     {
-        public Quarter()
+
+        public Grape()
         {
-            value = .25;
+            flavor = "Grape";
+            price = .60;
         }
     }
 }

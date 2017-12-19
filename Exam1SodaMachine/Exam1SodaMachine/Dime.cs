@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Exam1SodaMachine
 {
-    class Dime
+    class Dime : Coin
     {
-        double value;
-
         public Dime()
         {
             value = .10;
