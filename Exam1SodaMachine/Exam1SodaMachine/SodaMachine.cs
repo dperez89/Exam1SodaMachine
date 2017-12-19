@@ -16,7 +16,6 @@ namespace Exam1SodaMachine
         {
             this.inventory = inventory;
             this.register = register;
-            this.changeToDispense = changeToDispense;
         }
         public void VendSoda(string selection, List<Coin> payment)
         {
@@ -48,25 +47,25 @@ namespace Exam1SodaMachine
         {
             while (change > 0)
             {
-                if (change % register.Quarter.Value == 0)
+                if ((change * 10) % (Math.Round(register.Quarter.Value, 2) * 10) == 0)
                 {
                     register.Quarters.RemoveAt(0);
                     change -= register.Quarter.Value;
                     changeToDispense.Add(register.Quarter);
                 }
-                if (change % register.Dime.Value == 0)
+                if ((change * 10) % (Math.Round(register.Dime.Value, 2) * 10) == 0)
                 {
                     register.Dimes.RemoveAt(0);
                     change -= register.Dime.Value;
                     changeToDispense.Add(register.Dime);
                 }
-                if (change % register.Nickel.Value == 0)
+                if ((change * 10) % (Math.Round(register.Nickel.Value, 2) * 10) == 0)
                 {
                     register.Nickels.RemoveAt(0);
                     change -= register.Nickel.Value;
                     changeToDispense.Add(register.Nickel);
                 }
-                if (change % register.Penny.Value == 0)
+                if ((change * 10) % (Math.Round(register.Penny.Value, 2) * 10) == 0)
                 {
                     register.Pennies.RemoveAt(0);
                     change -= register.Penny.Value;
@@ -82,7 +81,7 @@ namespace Exam1SodaMachine
             {
                 totalPaymentAmount += payment[i].Value;
             }
-            changeToDispense = totalPaymentAmount - soda.Price;
+            changeToDispense = Math.Round((totalPaymentAmount - soda.Price), 2);
             if (changeToDispense > 0)
             {
                 DispenseChange(changeToDispense, register);
